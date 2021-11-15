@@ -1,0 +1,29 @@
+$ npm init --y 
+$ npm install (all packages from package.json)  
+$ createdb express_jobly
+$ psql < express-jobly.sql (database code already in place) 
+$ nodemon server.js (tour the application at localhost:3001) 
+
+CHECK DATABASE (PSQL) 
+$ psql 
+\c express_jobly 
+express_jobly=# \dt 
+           List of relations
+ Schema |     Name     | Type  | Owner 
+--------+--------------+-------+-------
+ public | applications | table | dbae
+ public | companies    | table | dbae
+ public | jobs         | table | dbae
+ public | users        | table | dbae
+jobly=# SELECT * FROM applications; 
+jobly=# SELECT * FROM companies; 
+jobly=# SELECT * FROM jobs; 
+jobly=# SELECT * FROM users; 
+
+TESTING 
+$ createdb express_jobly_test 
+$ psql < data.sql (or \c express_jobly_test; \i data.sql)
+$ jest -i (works thru all tests) 
+
+Add schema & return JSON Schema 
+$ touch express-jobly-schema.json (with JSON schema) 
