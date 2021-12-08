@@ -140,6 +140,7 @@ describe("get", function () {
       lastName: "U1L",
       email: "u1@email.com",
       isAdmin: false,
+      applications: []
     });
   });
 
@@ -227,4 +228,25 @@ describe("remove", function () {
       expect(err instanceof NotFoundError).toBeTruthy();
     }
   });
+});
+
+/************************************** applyToJob */
+
+describe("apply for job", () => {
+	test("error if invalid user", async () => {
+		try {
+			await User.applyToJob("xxx", expect.any(Number));
+			expect(res.rows.length).toEqual(0);
+		} catch (err) {
+			expect(err).toBeTruthy();
+		}
+	});
+	test("error if invalid job", async () => {
+		try {
+			await User.applyToJob("u1", 9999);
+			expect(res.rows.length).toEqual(0);
+		} catch (err) {
+			expect(err).toBeTruthy();
+		}
+	});
 });

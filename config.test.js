@@ -18,7 +18,7 @@ describe("config can come from env", function () {
     delete process.env.BCRYPT_WORK_FACTOR;
     delete process.env.DATABASE_URL;
 
-    expect(config.getDatabaseUri()).toEqual("express-jobly");
+    expect(config.getDatabaseUri()).toEqual("express_jobly");
     process.env.NODE_ENV = "test";
 
     expect(config.getDatabaseUri()).toEqual("express_jobly_test");
