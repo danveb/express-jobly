@@ -15,7 +15,6 @@ const companySearchSchema = require("../schemas/companySearch.json");
 
 const router = new express.Router();
 
-
 /** POST / { company } =>  { company }
  *
  * company should be { handle, name, description, numEmployees, logoUrl }

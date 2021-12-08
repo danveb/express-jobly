@@ -3,12 +3,12 @@
 /** Routes for users. */
 
 const jsonschema = require("jsonschema");
-
 const express = require("express");
+
 const { ensureAdmin, ensureCorrectUserOrAdmin } = require("../middleware/auth");
 const { BadRequestError } = require("../expressError");
-const User = require("../models/user");
 const { createToken } = require("../helpers/tokens");
+const User = require("../models/user");
 const userNewSchema = require("../schemas/userNew.json");
 const userUpdateSchema = require("../schemas/userUpdate.json");
 
